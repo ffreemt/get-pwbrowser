@@ -7,10 +7,12 @@ instantiate a playwright chromium browser
 ## Installation
 ```bash
 pip install git+https://github.com/ffreemt/get-pwbrowser.git
+python -m playwright install chromium
 ```
 or
 ```bash
 poetry add git+https://github.com/ffreemt/get-pwbrowser.git
+python -m playwright install chromium
 ```
 
 ## Usage

@@ -1,8 +1,8 @@
 [tool.poetry]
 name = "get-pwbrowser"
 version = "0.1.0"
-description = ""
-authors = ["freemt <yucongo+fmt@gmail.com>"]
+description = "instantiate a playwright chromium browser"
+authors = ["freemt"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
