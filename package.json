@@ -1,7 +1,7 @@
 {
   "name": "get-pwbrowser",
   "version": "0.1.0",
-  "description": "intantiate a playwright chrominium browser",
+  "description": "intantiate a playwright chromium browser",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
