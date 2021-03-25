@@ -5,7 +5,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "pyright": "nodemon get_pwbrowser/ -e py -x pyright tests get_pwbrowser",
+    "pyright": "nodemon -w get_pwbrowser/ -e py -x pyright",
     "pytest": "nodemon -w tests -w get_pwbrowser -e .py -x pytest tests",
     "black": "nodemon -w get_pwbrowser -w tests -x black tests get_pwbrowser",
     "flake8": "nodemon -w get_pwbrowser -w tests -x python -m flake8",

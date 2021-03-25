@@ -1,5 +1,5 @@
 {
-	"include": ["tests", "pack_name"],
+	"include": ["tests", "get_pwbrowser"],
   "venvPath": ".venv/Scripts",
   "reportTypeshedErrors": false,
   "reportMissingImports": true,
