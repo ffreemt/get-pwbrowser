@@ -3,6 +3,7 @@
 https://playwright.dev/python/docs/test-runners#usage
 """
 
+
 def test_example(page1):
     """Test example."""
     page1.goto("https://httpbin.org/")

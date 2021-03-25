@@ -15,12 +15,13 @@ from playwright.async_api import async_playwright
 
 # asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
+
 @pytest.mark.asyncio
 async def test_example2():
     async with async_playwright() as playwright:
         browser = await playwright.chromium.launch()
         page = await browser.new_page()
 
-        await page.goto("https://httpbin.org/", timeout = 60 * 1000)
+        await page.goto("https://httpbin.org/", timeout=60 * 1000)
         content = await page.text_content("h2")
         assert "httpbin" in content

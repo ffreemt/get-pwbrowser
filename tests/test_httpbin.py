@@ -15,7 +15,7 @@ async def browser():  # session
     await browser_.close()
 
 
-@pytest.mark.skip("need to fix 'event closed'")
+@pytest.mark.skip("need to fix 'event loop closed'")
 @pytest.mark.asyncio
 async def test_httpbin_(browser):
     """Test httpbin."""
@@ -31,6 +31,7 @@ async def test_httpbin_(browser):
     # or use playwright's pytest plugin
     # TODO
     await browser.close()
+
 
 # @pytest.mark.skip("need a fix")
 @pytest.mark.asyncio
@@ -49,9 +50,10 @@ async def test_httpbin(browser):
     await browser.close()
 
 
-@pytest.mark.skip("still event closed problem")
-def test_httpbin_():
+@pytest.mark.skip("still event loop closed problem")
+def test_httpbin_1():
     """Test httpbin."""
+
     async def test_():
         browser = await get_pwbrowser()
 
