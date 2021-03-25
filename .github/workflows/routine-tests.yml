@@ -28,5 +28,5 @@ jobs:
           # poetry run pytest
       - name: Run pytest
         run: |
-        poetry run pytest -k test_version
-        # poetry run pytest
+          poetry run pytest -k test_version
+          # poetry run pytest

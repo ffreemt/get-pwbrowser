@@ -38,3 +38,5 @@ or in `.env`
 # .env
 PWBROWSER_HEADFUL=1
 ```
+
+For more details have a look at the source code.
