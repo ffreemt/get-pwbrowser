@@ -52,7 +52,7 @@ async def page2():
 @pytest.mark.asyncio
 async def browser1(scope="module"):  # session
     browser_ = await get_pwbrowser()
-    # return browser_
+
     yield browser_
     await browser_.close()
 
