@@ -1,4 +1,4 @@
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 from .get_pwbrowser import get_pwbrowser
 from .get_pwbrowser_async import get_pwbrowser as get_pwbrowser_async
 

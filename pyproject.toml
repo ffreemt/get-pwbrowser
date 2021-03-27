@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "get-pwbrowser"
-version = "0.1.0"
+version = "0.1.1"
 description = "instantiate a playwright chromium browser"
 authors = ["freemt"]
 
@@ -29,7 +29,7 @@ build-backend = "poetry.masonry.api"
 # github_url = "https://github.com/<user or organization>/<project>/"
 
 [tool.tbump.version]
-current = "0.1.0"
+current = "0.1.1"
 
 # Example of a semver regexp.
 # Make sure this matches current_version before
