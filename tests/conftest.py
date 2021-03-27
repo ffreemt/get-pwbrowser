@@ -2,7 +2,8 @@ import asyncio
 import pytest
 from playwright.sync_api import sync_playwright
 from playwright.async_api import async_playwright
-from get_pwbrowser import get_pwbrowser
+from get_pwbrowser import get_pwbrowser_async as get_pwbrowser
+from get_pwbrowser import get_pwbrowser as get_pwbrowser_sync
 
 
 @pytest.fixture
@@ -77,3 +78,12 @@ def loop_browser(scope="module"):
     print(" is loop closed: %s" % loop.is_closed())
 
     loop.close()
+
+
+@pytest.fixture  # sync
+def pwbrowser(scope="module"):
+    browser_ = get_pwbrowser_sync()
+
+    yield browser_
+
+    browser_.close()

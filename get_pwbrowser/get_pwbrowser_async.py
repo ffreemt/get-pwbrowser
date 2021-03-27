@@ -2,12 +2,9 @@
 
 Respect PWBROWSER_ environ variables in .env
 """
-#
-
 from typing import Union, Optional
 
-# from playwright.async_api import async_playwright, Browser
-from playwright.sync_api import sync_playwright, Browser
+from playwright.async_api import async_playwright, Browser
 from get_pwbrowser.config import Settings
 
 import logzero
@@ -20,32 +17,29 @@ PROXY = config.proxy
 
 
 # fmt: off
-def get_pwbrowser(
+async def get_pwbrowser(
         headless: bool = HEADLESS,
         verbose: Union[bool, int] = DEBUG,
         proxy: Optional[Union[str, dict]] = PROXY,
         **kwargs
 ) -> Browser:
     # fmt: on
-    """Instantiate a playwright chrominium browser (sync).
-
-    mainly for scraping google translate where a page is reused
-    hence, the sync version of get_pwbrowser makes more sense
+    """Instantiate a playwright chrominium browser.
 
     if isinstance(verbose, bool):
         verbose = 10 if verbose else 20
     logzero.loglevel(verbose)
 
-    browser = get_browser(headless)
-    context = browser.newContext()
-    page = context.newPage()
-    page.goto('https://httpbin.org/ip') https://httpbin.org/ip
+    browser = await get_browser(headless)
+    context = await browser.newContext()
+    page = await context.newPage()
+    await page.goto('https://httpbin.org/ip') https://httpbin.org/ip
     # https://getfoxyproxy.org/geoip/
     # http://whatsmyuseragent.org/
     https://playwright.dev/python/docs/intro/
 
     proxy setup: https://playwright.dev/python/docs/network?_highlight=proxy#http-proxy
-        browser = chromium.launch(proxy={
+        browser = await chromium.launch(proxy={
           "server": "http://myproxy.com:3128",
           "user": "usr",
           "password": "pwd"
@@ -57,13 +51,6 @@ def get_pwbrowser(
             };
             browser = await playwright['chromium'].launch(launchOptions)
 
-    os.environ['PWBROWSER_HEADFUL'] = 'true'
-
-    headless: bool = HEADLESS
-    headless: bool = False
-    verbose: Union[bool, int] = DEBUG
-    proxy: Optional[Union[str, dict]] = PROXY
-    kwargs = {}
     """
     if isinstance(verbose, bool):
         verbose = 10 if verbose else 20
@@ -80,14 +67,13 @@ def get_pwbrowser(
         })
 
     try:
-        playwright = sync_playwright().start()
+        playwright = await async_playwright().start()
     except Exception as exc:
         logger.error(exc)
         raise
 
     try:
-        browser = playwright.chromium.launch(**kwargs)
-        # browser = playwright.chromium.launch(headless=False)
+        browser = await playwright.chromium.launch(**kwargs)
     except Exception as exc:
         logger.error(exc)
         raise

@@ -32,5 +32,5 @@ jobs:
         run: |
           # poetry run pytest -k "test_version or normalway or hardway"
           # Windows unable to pass test_normalway
-          poetry run pytest -k "test_version or hardway"
+          poetry run pytest -k "test_version or hardway or sync_browser"
           # poetry run pytest

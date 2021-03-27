@@ -10,7 +10,8 @@
     "black": "nodemon -w get_pwbrowser -w tests -x black tests get_pwbrowser",
     "flake8": "nodemon -w get_pwbrowser -w tests -x python -m flake8",
     "pylint": "nodemon -w get_pwbrowser -e .py -x pylint get_pwbrowser",
-    "test:get_pwbrowser": "nodemon -w tests -e .py -x pytest -k get_pwbrowser tests",
-    "test:httpbin": "nodemon -w tests -e .py -x \"pytest -k httpbin\""
+    "test:version": "nodemon -w tests -e .py -x pytest -k get_pwbrowser tests",
+    "test:httpbin": "nodemon -w tests -e .py -x \"pytest -k httpbin\"",
+    "test:sync_b": "nodemon -w tests -e .py -x \"pytest -k sync_browser\""
   }
 }
