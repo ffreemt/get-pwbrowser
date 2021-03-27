@@ -12,9 +12,11 @@ python -m playwright install chromium
 <details>
 <summary>or via poetry</summary>
 <code style="white-space:wrap;">
+```
 poetry add git+https://github.com/ffreemt/get-pwbrowser.git &&
 python -m playwright install chromium
-</code>
+```
+</code></details>
 
 ## Usage
 
