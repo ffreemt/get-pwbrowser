@@ -12,10 +12,8 @@ python -m playwright install chromium
 <details>
 <summary>or via poetry</summary>
 <code style="white-space:wrap;">
-```
 poetry add git+https://github.com/ffreemt/get-pwbrowser.git &&
 python -m playwright install chromium
-```
 </code></details>
 
 ## Usage
@@ -28,7 +26,9 @@ page = browser.new_page()
 page.goto("http://www.baidu.com")
 print(page.title())
 # '百度一下，你就知道'
+```
 
+async version
 ```python
 # async version
 from get_pwbrowser import get_pwbrowser_async as get_pwbrowser
@@ -42,9 +42,19 @@ print(await page.title())
 await browser.close()
 ```
 
-## `.env` and `os.environ`
+## Use of `.env` and `os.environ`
+The browser can be run in a headful manner (to actually see what's going on):
+```
+from get_pwbrowser import get-pwbrowser
+browser = get_pwbrowser(headless=False)
 
-`HEADFUL`, `DEBUG` and `PROXY` can be set in shell environ or in .env with prefix `PWBROWSER_`.
+# or async version
+from get_pwbrowser import get_pwbrowser_asyn
+
+browser_aysnc = await get_pwbrowser_async(headless=False)
+```
+
+Some related parameters `HEADFUL`, `DEBUG` and `PROXY` can be set in shell environ or in .env with prefix `PWBROWSER_`.
 
 e.g., `set PWBROWSER_HEADFUL=1` in Windows or `export PWBROWSER_HEADFUL=1` in Linux and freinds)
 
