@@ -81,7 +81,7 @@ def loop_browser(scope="module"):
 
 
 @pytest.fixture  # sync
-def pwbrowser(scope="module"):
+def pwbrowser(scope="session"):
     browser_ = get_pwbrowser_sync()
 
     yield browser_
